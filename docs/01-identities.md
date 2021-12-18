@@ -52,11 +52,11 @@ This is the case where Kubelet Managed Identity is being used.
 
 ### Q&A:
 
-> Q: I've created a cluster with Managed Identities via Azure Portal. In my [MC_](https://docs.microsoft.com/en-us/azure/aks/faq#why-are-two-resource-groups-created-with-aks) Resource Group I can see only one MI  *cluster_name-resource_group-agentpool*. Is it a CP MI or Kubelete MI?
+> Q: I've created a cluster with Managed Identities via Azure Portal. In my [MC_](https://docs.microsoft.com/en-us/azure/aks/faq#why-are-two-resource-groups-created-with-aks) Resource Group I can see only one MI  *cluster_name-resource_group-agentpool*. Is it a CP MI or Kubelete MI?
 
-> A: No. This is Kubelet MI. If you create cluster with dynamic(SystemAssigned) MI provisioning(MI is being provisioning along side cluster creation), you will see only Kubelet MI in your MC_ group. CP MI will be opaque to you.
+> A: No. This is Kubelet MI. If you create a cluster with dynamic(SystemAssigned) MI provisioning(MI is being provisioned during cluster creation), you will see only Kubelet MI in your MC_ group. CP MI will be opaque to you.
 
-> Q: if I delete a cluster with dynamic(SystemAssigned) MI provisioning, will it delete both CP MI and Kubelet MI?
+> Q: if I delete a cluster with dynamic(SystemAssigned) MI provisioning, will both CP MI and Kubelet MI be deleted?
 
 > A: Yes, it will
 
@@ -94,12 +94,11 @@ Let's create Managed Identities. Later will use them during our journey of creat
 1. Define variables
 
 ```bash
-RESOURCE_GROUP="bulletproofaks"
+RESOURCE_GROUP="hardenedaks"
 LOCATION="westeurope"
-CLUSTER_NAME="bpaks"
-CP_MI="bpaks-cp-mi"
-KUBELET_MI="bpaks-kubelet-mi"
-
+CLUSTER_NAME="haks"
+CP_MI="haks-cp-mi"
+KUBELET_MI="haks-kubelet-mi"
 ```
 
 2. Create Resource Group

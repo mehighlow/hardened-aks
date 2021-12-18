@@ -56,9 +56,9 @@ This is the case where Kubelet Managed Identity is being used.
 
 > A: No. This is Kubelet MI. If you create a cluster with dynamic(SystemAssigned) MI provisioning(MI is being provisioned during cluster creation), you will see only Kubelet MI in your MC_ group. CP MI will be opaque to you.
 
-> Q: if I delete a cluster with dynamic(SystemAssigned) MI provisioning, will both CP MI and Kubelet MI be deleted?
+> Q: If I delete a cluster with dynamic(SystemAssigned) MI provisioning, will both CP MI and Kubelet MI be deleted?
 
-> A: Yes, it will
+> A: Yes
 
 ## 4. Complex Scenarios
 
